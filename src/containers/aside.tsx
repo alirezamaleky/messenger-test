@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import AsideComponent from "../components/aside-component";
+import AsideComponent from "../components/aside";
 
 const Aside: FC = () => {
   return <AsideComponent />;
