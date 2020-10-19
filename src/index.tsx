@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Messenger from "./containers/messenger";
 import * as serviceWorker from "./serviceWorker";
 import MaterialTheme, { ThemeType } from "./themes";
 
 ReactDOM.render(
   <React.StrictMode>
     <MaterialTheme theme={ThemeType.LIGHT}>
-      <div></div>
+      <Messenger />
     </MaterialTheme>
   </React.StrictMode>,
   document.getElementById("root")
