@@ -1,0 +1,28 @@
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
+
+  [data-theme="DARK"] & {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-color: var(--primary-color);
+
+  [data-theme="DARK"] & {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

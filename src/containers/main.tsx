@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import MainComponent from "../components/main-component";
+import MainComponent from "../components/main";
 
 const Main: FC = () => {
   return <MainComponent />;

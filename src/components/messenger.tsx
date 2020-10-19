@@ -5,7 +5,7 @@ import Main from "../containers/main";
 import { shallowEqual } from "../libs/shallowEqual";
 import styles from "./messenger.module.scss";
 
-const MessengerComponent: FC = () => {
+const Messenger: FC = () => {
   return (
     <div className={`d-flex flex-nowrap ${styles.messenger}`}>
       <Aside />
@@ -14,4 +14,4 @@ const MessengerComponent: FC = () => {
   );
 };
 
-export default memo(MessengerComponent, shallowEqual);
+export default memo(Messenger, shallowEqual);
