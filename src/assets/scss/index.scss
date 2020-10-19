@@ -3,3 +3,9 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/grid";
+
+@import "./fontiran";
+
+body {
+  font-family: var(--primary-font);
+}
