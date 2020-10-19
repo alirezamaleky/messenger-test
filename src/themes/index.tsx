@@ -33,6 +33,9 @@ const themeGenerator: (theme: ThemeType) => Theme = (theme: ThemeType) => {
       typography: {
         fontFamily: "var(--primary-font)",
       },
+      shape: {
+        borderRadius: 10,
+      },
       ...themes[theme],
     },
     direction === "rtl" ? faIR : enUS
