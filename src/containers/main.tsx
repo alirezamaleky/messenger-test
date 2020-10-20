@@ -7,7 +7,7 @@ export type ChatParamsType = {
 };
 
 const Main: FC = () => {
-  let { id } = useParams<ChatParamsType>();
+  const { id } = useParams<ChatParamsType>();
   const sendMessage = (content: string) => {
     // TODO
   };

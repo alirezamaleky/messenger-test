@@ -5,11 +5,15 @@ import { direction } from "../themes";
 import { AvatarSizeType } from "./avatar";
 import UserComponent from "./user";
 
-const AsideContactsComponent: FC = () => {
+type Props = {
+  closeAside: () => void;
+};
+
+const AsideContactsComponent: FC<Props> = (props) => {
   return (
     <div dir={direction}>
       {Array.from(Array(50), (e, i) => (
-        <UserComponent key={i} initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
+        <UserComponent onClick={props.closeAside} key={i} initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
       ))}
     </div>
   );

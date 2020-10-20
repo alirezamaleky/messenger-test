@@ -7,20 +7,25 @@ import { direction } from "../themes";
 import { AvatarSizeType } from "./avatar";
 import UserComponent from "./user";
 
-const AsideMembersComponent: FC = () => {
+type Props = {
+  closeAside: () => void;
+};
+
+const AsideMembersComponent: FC<Props> = (props) => {
   return (
     <div dir={direction}>
       {Array.from(Array(50), (e, i) => (
         <UserComponent
-          onClick={() =>
+          onClick={() => {
             memoryHistory.push(ROUTE_MESSENGER_CHAT.replace(":id?", "i"), {
               initials: i,
               avatar: undefined,
               color: colors.indigo["300"],
               name: "علیرضا ملکی",
               message: "12:58",
-            })
-          }
+            });
+            props.closeAside();
+          }}
           key={i}
           initials={"A"}
           unreadCount={2}

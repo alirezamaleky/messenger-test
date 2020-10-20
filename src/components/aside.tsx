@@ -18,17 +18,19 @@ enum AsideTabs {
 
 type Props = {
   asideStatus: AsideStatusType;
+  isInChat: boolean;
+  closeAside: () => void;
 };
 
 const AsideComponent: FC<Props> = (props) => {
   const [index, setIndex] = useState<AsideTabs>(AsideTabs.CHATS);
 
   return (
-    <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside} ${props.asideStatus ? styles.active : ""}`}>
+    <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside} ${props.asideStatus ? styles.active : props.isInChat ? "" : styles.full_width}`}>
       <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
-        <AsideMembersComponent />
-        <AsideContactsComponent />
+        <AsideMembersComponent closeAside={props.closeAside} />
+        <AsideContactsComponent closeAside={props.closeAside} />
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
         <Tabs color="primary" indicatorColor="secondary" value={index} onChange={(e, v) => setIndex(v)}>

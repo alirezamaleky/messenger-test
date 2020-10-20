@@ -11,7 +11,7 @@ import { ChatParamsType } from "./main";
 
 const MainHeader: FC = () => {
   const dispatch = useDispatch();
-  let { id } = useParams<ChatParamsType>();
+  const { id } = useParams<ChatParamsType>();
   const asideStatus = useSelector<ReducersType, AsideStatusType>((state) => state.theme.asideStatus, shallowEqual);
 
   const { state } = useLocation();

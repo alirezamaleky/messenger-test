@@ -1,4 +1,3 @@
-//
 import { IconButton } from "@material-ui/core";
 import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
@@ -38,10 +37,7 @@ const MainHeaderComponent: FC<Props> = (props) => {
           </>
         )}
         <IconButton className="d-block d-sm-none" onClick={props.toggleAside}>
-          <MenuOutlinedIcon />
-        </IconButton>
-        <IconButton className={props.asideStatus ? "d-block" : "d-none"} onClick={props.toggleAside}>
-          <CloseOutlinedIcon />
+          {props.asideStatus ? <CloseOutlinedIcon /> : <MenuOutlinedIcon />}
         </IconButton>
       </div>
     </header>
