@@ -1,5 +1,4 @@
 import React, { FC, memo } from "react";
-import "../assets/scss/index.scss";
 import MainHeader from "../containers/main-header";
 import { shallowEqual } from "../libs/shallowEqual";
 import styles from "./main.module.scss";

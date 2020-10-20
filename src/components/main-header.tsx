@@ -2,7 +2,6 @@ import { IconButton } from "@material-ui/core";
 import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import React, { FC, memo } from "react";
-import "../assets/scss/index.scss";
 import { shallowEqual } from "../libs/shallowEqual";
 import { AsideStatusType } from "../store/theme/types";
 import styles from "./main-header.module.scss";

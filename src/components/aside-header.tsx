@@ -6,7 +6,6 @@ import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import MenuOutlinedIcon from "@material-ui/icons/MenuOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import React, { FC, memo, useState } from "react";
-import "../assets/scss/index.scss";
 import { shallowEqual } from "../libs/shallowEqual";
 import { direction } from "../themes";
 import styles from "./aside-header.module.scss";

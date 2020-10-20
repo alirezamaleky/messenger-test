@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { Route, Router } from "react-router-dom";
+import "./assets/scss/index.scss";
 import { ROUTE_MESSENGER_CHAT } from "./constants/routes";
 import Messenger from "./containers/messenger";
 import * as serviceWorker from "./serviceWorker";
