@@ -1,4 +1,4 @@
-import * as colors from "@material-ui/core/colors";
+import { colors } from "@material-ui/core";
 import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 import "./dark.scss";
 
