@@ -6,6 +6,7 @@ import SwipeableViews from "react-swipeable-views";
 import "../assets/scss/index.scss";
 import AsideHeader from "../containers/aside-header";
 import { shallowEqual } from "../libs/shallowEqual";
+import { AsideStatusType } from "../store/theme/types";
 import { direction } from "../themes";
 import styles from "./aside.module.scss";
 import { AvatarSizeType } from "./avatar";
@@ -28,11 +29,15 @@ enum AsideTabs {
   CHATS = 1,
 }
 
-const AsideComponent: FC = () => {
+type Props = {
+  asideStatus: AsideStatusType;
+};
+
+const AsideComponent: FC<Props> = (props) => {
   const [index, setIndex] = useState<AsideTabs>(AsideTabs.CHATS);
 
   return (
-    <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside}`}>
+    <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside} ${props.asideStatus ? styles.active : ""}`}>
       <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
         <TabPanelComponent value={index} index={AsideTabs.CONTACTS}>

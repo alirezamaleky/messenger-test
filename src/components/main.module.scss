@@ -1,6 +1,16 @@
+@import "src/assets/scss/variable";
+
 .main {
   flex: 0 0 calc(100% - 350px);
   max-width: calc(100% - 350px);
   background-color: rgba(0, 0, 0, 0.1);
   background-image: url("../assets/img/messenger-bg.png");
+}
+
+@media (max-width: #{map-get($grid-breakpoints, "md") - 1}) {
+  .main {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
