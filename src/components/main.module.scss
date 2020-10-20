@@ -1,10 +1,26 @@
 @import "src/assets/scss/variable";
 
 .main {
+  position: relative;
   flex: 0 0 calc(100% - 350px);
   max-width: calc(100% - 350px);
   background-color: rgba(0, 0, 0, 0.1);
-  background-image: url("../assets/img/messenger-bg.png");
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/messenger-bg.png");
+
+    [data-theme="DARK"] & {
+      opacity: 0.15;
+    }
+  }
 }
 
 @media (max-width: #{map-get($grid-breakpoints, "sm") - 1}) {
