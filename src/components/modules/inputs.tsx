@@ -14,6 +14,9 @@ export const RoundedTextField = withStyles({
         borderColor: "transparent",
         backgroundColor: "rgba(0, 0, 0, 0.04)",
       },
+      "[data-theme='DARK'] & fieldset": {
+        backgroundColor: "rgba(255, 255, 255, 0.08)",
+      },
       "&:hover fieldset": {
         borderWidth: 2,
       },
