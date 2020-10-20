@@ -19,9 +19,9 @@ const UserComponent: FC<UserProps> = (props) => {
       <div className={`col text-start ${styles.contents}`}>
         <div className="d-flex justify-content-between">
           <h3 className="my-0">{props.name}</h3>
-          <time className="small">{props.time}</time>
+          <time className="font-weight-light small">{props.time}</time>
         </div>
-        <p className="my-0 text-ellipsis">{props.message}</p>
+        <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>
       </div>
     </Button>
   );
