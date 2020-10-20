@@ -11,7 +11,7 @@ import styles from "./aside.module.scss";
 import { AvatarSizeType } from "./avatar";
 import UserComponent from "./user";
 
-const TabPanel: FC<any> = (props) => {
+const TabPanelComponent: FC<any> = (props) => {
   return (
     <div hidden={props.value !== props.index} id={`tab-${props.index}`} {...props.other} dir={direction}>
       {props.value === props.index && (
@@ -28,14 +28,14 @@ enum AsideTabs {
   CHATS = 1,
 }
 
-const Aside: FC = () => {
+const AsideComponent: FC = () => {
   const [index, setIndex] = useState<AsideTabs>(AsideTabs.CHATS);
 
   return (
     <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside}`}>
       <AsideHeaderComponent />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
-        <TabPanel value={index} index={AsideTabs.CONTACTS}>
+        <TabPanelComponent value={index} index={AsideTabs.CONTACTS}>
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
@@ -65,8 +65,8 @@ const Aside: FC = () => {
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
-        </TabPanel>
-        <TabPanel value={index} index={AsideTabs.CHATS}>
+        </TabPanelComponent>
+        <TabPanelComponent value={index} index={AsideTabs.CHATS}>
           <UserComponent
             initials={"A"}
             unreadCount={2}
@@ -97,7 +97,7 @@ const Aside: FC = () => {
             time={"12:58"}
             message={"لورم ایپسوم متنی ساختگی از صنعت چاپ و گرافیک است."}
           />
-        </TabPanel>
+        </TabPanelComponent>
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
         <Tabs color="primary" indicatorColor="secondary" value={index} onChange={(e, v) => setIndex(v)}>
@@ -109,4 +109,4 @@ const Aside: FC = () => {
   );
 };
 
-export default memo(Aside, shallowEqual);
+export default memo(AsideComponent, shallowEqual);

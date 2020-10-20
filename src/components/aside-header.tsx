@@ -12,7 +12,7 @@ import { direction } from "../themes";
 import styles from "./aside-header.module.scss";
 import { RoundedTextField } from "./modules/inputs";
 
-const AsideHeader: FC = () => {
+const AsideHeaderComponent: FC = () => {
   const [anchorEl, setAnchorEl] = useState<PopoverProps["anchorEl"] | undefined>(undefined);
   const closeMenu = () => setAnchorEl(undefined);
 
@@ -43,4 +43,4 @@ const AsideHeader: FC = () => {
   );
 };
 
-export default memo(AsideHeader, shallowEqual);
+export default memo(AsideHeaderComponent, shallowEqual);
