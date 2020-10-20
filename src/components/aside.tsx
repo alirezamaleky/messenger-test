@@ -29,26 +29,24 @@ const AsideComponent: FC<Props> = (props) => {
       <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
         <div dir={direction} className="px-1">
-          {Array.from(Array(50), (e, i) => {
-            return <UserComponent key={i} initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />;
-          })}
+          {Array.from(Array(50), (e, i) => (
+            <UserComponent key={i} initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />
+          ))}
         </div>
         <div dir={direction} className="px-1">
-          {Array.from(Array(50), (e, i) => {
-            return (
-              <UserComponent
-                key={i}
-                initials={"A"}
-                unreadCount={2}
-                avatar={undefined}
-                color={colors.indigo["300"]}
-                size={AvatarSizeType.MEDIUM}
-                name={"علیرضا ملکی"}
-                time={"12:58"}
-                message={"لورم ایپسوم متنی ساختگی از صنعت چاپ و گرافیک است."}
-              />
-            );
-          })}
+          {Array.from(Array(50), (e, i) => (
+            <UserComponent
+              key={i}
+              initials={"A"}
+              unreadCount={2}
+              avatar={undefined}
+              color={colors.indigo["300"]}
+              size={AvatarSizeType.MEDIUM}
+              name={"علیرضا ملکی"}
+              time={"12:58"}
+              message={"لورم ایپسوم متنی ساختگی از صنعت چاپ و گرافیک است."}
+            />
+          ))}
         </div>
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
