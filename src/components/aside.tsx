@@ -4,9 +4,9 @@ import PermContactCalendarOutlinedIcon from "@material-ui/icons/PermContactCalen
 import React, { FC, memo, useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import "../assets/scss/index.scss";
+import AsideHeader from "../containers/aside-header";
 import { shallowEqual } from "../libs/shallowEqual";
 import { direction } from "../themes";
-import AsideHeaderComponent from "./aside-header";
 import styles from "./aside.module.scss";
 import { AvatarSizeType } from "./avatar";
 import UserComponent from "./user";
@@ -33,7 +33,7 @@ const AsideComponent: FC = () => {
 
   return (
     <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside}`}>
-      <AsideHeaderComponent />
+      <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
         <TabPanelComponent value={index} index={AsideTabs.CONTACTS}>
           <UserComponent initials={"A"} avatar={undefined} color={colors.indigo["300"]} size={AvatarSizeType.MEDIUM} name={"علیرضا ملکی"} message={"10 دقیقه پیش"} />

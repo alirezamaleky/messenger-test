@@ -12,7 +12,11 @@ import { direction } from "../themes";
 import styles from "./aside-header.module.scss";
 import { RoundedTextField } from "./modules/inputs";
 
-const AsideHeaderComponent: FC = () => {
+type Props = {
+  toggleTheme: () => void;
+};
+
+const AsideHeaderComponent: FC<Props> = (props) => {
   const [anchorEl, setAnchorEl] = useState<PopoverProps["anchorEl"] | undefined>(undefined);
   const closeMenu = () => setAnchorEl(undefined);
 
@@ -36,7 +40,7 @@ const AsideHeaderComponent: FC = () => {
         </MenuItem>
       </Menu>
       <RoundedTextField placeholder="جستجو" variant="outlined" fullWidth />
-      <IconButton className={direction === "rtl" ? "mr-1" : "ml-1"}>
+      <IconButton className={direction === "rtl" ? "mr-1" : "ml-1"} onClick={props.toggleTheme}>
         <Brightness4OutlinedIcon />
       </IconButton>
     </header>
