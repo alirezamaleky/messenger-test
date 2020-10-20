@@ -20,7 +20,7 @@ const AsideHeaderComponent: FC<Props> = (props) => {
   const closeMenu = () => setAnchorEl(undefined);
 
   return (
-    <header className={`shadow-sm d-flex justify-content-between align-items-center p-2 ${styles.header}`}>
+    <header className={`shadow-sm d-flex justify-content-between align-items-center py-2 ${styles.header}`}>
       <IconButton className={direction === "rtl" ? "ml-1" : "mr-1"} onClick={(e) => setAnchorEl(e.currentTarget)}>
         <MenuOutlinedIcon />
       </IconButton>
