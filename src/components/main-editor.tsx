@@ -7,11 +7,12 @@ import MainTextareaComponent from "./main-textarea";
 
 type Props = {
   sendMessage: (content: string) => void;
+  isInChat: boolean;
 };
 
 const MainEditorComponent: FC<Props> = (props) => {
   return (
-    <div className={`d-flex align-items-end ${styles.editor}`} dir="ltr">
+    <div className={`shadow d-flex align-items-end ${styles.editor} ${props.isInChat ? "" : "invisible"}`} dir="ltr">
       <IconButton color="primary">
         <EmojiEmotionsOutlinedIcon />
       </IconButton>
