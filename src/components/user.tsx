@@ -12,7 +12,7 @@ export type UserProps = AvatarProps & {
 
 const UserComponent: FC<UserProps> = (props) => {
   return (
-    <Button fullWidth className="justify-content-start font-weight-normal text-nowrap">
+    <Button fullWidth className={`justify-content-start font-weight-normal text-nowrap ${styles.user}`} onClick={props.onClick}>
       <div className="col-auto">
         <AvatarComponent initials={props.initials} unreadCount={props.unreadCount} avatar={props.avatar} color={props.color} size={props.size} />
       </div>
