@@ -6,13 +6,14 @@ import styles from "./main.module.scss";
 
 type Props = {
   sendMessage: (content: string) => void;
+  isInChat: boolean;
 };
 
 const MainComponent: FC<Props> = (props) => {
   return (
     <main className={`shadow h-100 d-flex flex-column justify-content-between ${styles.main}`}>
       <MainHeader />
-      <MainEditorComponent sendMessage={props.sendMessage} />
+      <MainEditorComponent sendMessage={props.sendMessage} isInChat={props.isInChat} />
     </main>
   );
 };
