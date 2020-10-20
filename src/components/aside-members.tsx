@@ -1,5 +1,7 @@
 import { colors } from "@material-ui/core";
 import React, { FC, memo } from "react";
+import { ROUTE_MESSENGER_CHAT } from "../constants/routes";
+import { memoryHistory } from "../index";
 import { shallowEqual } from "../libs/shallowEqual";
 import { direction } from "../themes";
 import { AvatarSizeType } from "./avatar";
@@ -10,6 +12,15 @@ const AsideMembersComponent: FC = () => {
     <div dir={direction}>
       {Array.from(Array(50), (e, i) => (
         <UserComponent
+          onClick={() =>
+            memoryHistory.push(ROUTE_MESSENGER_CHAT.replace(":id?", "i"), {
+              initials: i,
+              avatar: undefined,
+              color: colors.indigo["300"],
+              name: "علیرضا ملکی",
+              message: "12:58",
+            })
+          }
           key={i}
           initials={"A"}
           unreadCount={2}
