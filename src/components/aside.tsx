@@ -12,8 +12,8 @@ import AsideMembersComponent from "./aside-members";
 import styles from "./aside.module.scss";
 
 enum AsideTabs {
-  CONTACTS = 0,
-  CHATS = 1,
+  CHATS = 0,
+  CONTACTS = 1,
 }
 
 type Props = {
@@ -32,8 +32,8 @@ const AsideComponent: FC<Props> = (props) => {
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
         <Tabs color="primary" indicatorColor="secondary" value={index} onChange={(e, v) => setIndex(v)}>
-          <Tab value={AsideTabs.CHATS} className="col" icon={<ChatBubbleOutlineOutlinedIcon />} />
           <Tab value={AsideTabs.CONTACTS} className="col" icon={<PermContactCalendarOutlinedIcon />} />
+          <Tab value={AsideTabs.CHATS} className="col" icon={<ChatBubbleOutlineOutlinedIcon />} />
         </Tabs>
       </AppBar>
     </aside>
