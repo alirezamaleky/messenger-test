@@ -1,19 +1,12 @@
 import { createMuiTheme, CssBaseline, Theme, ThemeProvider } from "@material-ui/core";
 import { enUS, faIR } from "@material-ui/core/locale";
-import React, { FC, memo, ReactChild } from "react";
+import React, { FC, memo, PropsWithChildren } from "react";
+import { useSelector } from "react-redux";
 import { shallowEqual } from "../libs/shallowEqual";
+import { ReducersType } from "../store";
+import { ThemeType } from "../store/theme/types";
 import dark from "./dark";
 import light from "./light";
-
-export enum ThemeType {
-  DARK = "DARK",
-  LIGHT = "LIGHT",
-}
-
-type Props = {
-  theme: ThemeType;
-  children: ReactChild;
-};
 
 type DirectionsType = "rtl" | "ltr";
 
@@ -42,9 +35,11 @@ const themeGenerator: (theme: ThemeType) => Theme = (theme: ThemeType) => {
   );
 };
 
-const MaterialTheme: FC<Props> = (props) => {
+const MaterialTheme: FC<PropsWithChildren<{}>> = (props) => {
+  const theme = useSelector<ReducersType, ThemeType>((state) => state.theme.theme, shallowEqual);
+
   return (
-    <ThemeProvider theme={themeGenerator(props.theme)}>
+    <ThemeProvider theme={themeGenerator(theme)}>
       <CssBaseline />
       <>{props.children}</>
     </ThemeProvider>

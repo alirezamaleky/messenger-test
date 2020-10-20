@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import Messenger from "./containers/messenger";
 import * as serviceWorker from "./serviceWorker";
-import MaterialTheme, { ThemeType } from "./themes";
+import store from "./store";
+import MaterialTheme from "./themes";
 
 ReactDOM.render(
   <React.StrictMode>
-    <MaterialTheme theme={ThemeType.LIGHT}>
-      <Messenger />
-    </MaterialTheme>
+    <Provider store={store}>
+      <MaterialTheme>
+        <Messenger />
+      </MaterialTheme>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
