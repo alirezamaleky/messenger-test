@@ -14,7 +14,7 @@ type Props = {
 const MainHeaderComponent: FC<Props> = (props) => {
   return (
     <header className={`shadow-sm d-flex justify-content-between align-items-center p-2 ${styles.header}`}>
-      <IconButton className="d-block d-md-none" onClick={props.toggleAside}>
+      <IconButton className="d-block d-sm-none" onClick={props.toggleAside}>
         <MenuOutlinedIcon />
       </IconButton>
       <IconButton className={props.asideStatus ? "d-block" : "d-none"} onClick={props.toggleAside}>

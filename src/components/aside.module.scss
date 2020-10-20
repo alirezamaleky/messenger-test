@@ -5,10 +5,10 @@
   max-width: 350px;
 }
 
-@media (max-width: #{map-get($grid-breakpoints, "md") - 1}) {
+@media (max-width: #{map-get($grid-breakpoints, "sm") - 1}) {
   .aside {
-    width: 300px;
     max-width: 80vw;
+    width: 300px;
     height: 100%;
     position: fixed;
     z-index: 11;

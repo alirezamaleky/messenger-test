@@ -7,7 +7,7 @@
   background-image: url("../assets/img/messenger-bg.png");
 }
 
-@media (max-width: #{map-get($grid-breakpoints, "md") - 1}) {
+@media (max-width: #{map-get($grid-breakpoints, "sm") - 1}) {
   .main {
     width: 100%;
     flex: 0 0 100%;
