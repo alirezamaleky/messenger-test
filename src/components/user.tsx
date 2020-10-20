@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import React, { FC, memo } from "react";
+import React, { DOMAttributes, FC, memo } from "react";
 import { shallowEqual } from "../libs/shallowEqual";
 import AvatarComponent, { AvatarProps } from "./avatar";
 import styles from "./user.module.scss";
@@ -7,7 +7,8 @@ import styles from "./user.module.scss";
 export type UserProps = AvatarProps & {
   name: string;
   time?: string;
-  message: string;
+  message?: string;
+  onClick?: DOMAttributes<HTMLElement>["onClick"];
 };
 
 const UserComponent: FC<UserProps> = (props) => {
@@ -19,9 +20,9 @@ const UserComponent: FC<UserProps> = (props) => {
       <div className={`col text-start ${styles.contents}`}>
         <div className="d-flex justify-content-between">
           <h3 className="my-0">{props.name}</h3>
-          <time className="font-weight-light small d-none d-sm-block">{props.time}</time>
+          {props.time !== undefined && <time className="font-weight-light small d-none d-sm-block">{props.time}</time>}
         </div>
-        <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>
+        {props.message !== undefined && <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>}
       </div>
     </Button>
   );
