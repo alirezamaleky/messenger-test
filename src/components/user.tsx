@@ -12,14 +12,14 @@ export type UserProps = AvatarProps & {
 
 const UserComponent: FC<UserProps> = (props) => {
   return (
-    <Button fullWidth className="justify-content-start font-weight-normal">
+    <Button fullWidth className="justify-content-start font-weight-normal text-nowrap">
       <div className="col-auto">
         <AvatarComponent initials={props.initials} unreadCount={props.unreadCount} avatar={props.avatar} color={props.color} size={props.size} />
       </div>
       <div className={`col text-start ${styles.contents}`}>
         <div className="d-flex justify-content-between">
           <h3 className="my-0">{props.name}</h3>
-          <time className="font-weight-light small">{props.time}</time>
+          <time className="font-weight-light small d-none d-sm-block">{props.time}</time>
         </div>
         <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>
       </div>
