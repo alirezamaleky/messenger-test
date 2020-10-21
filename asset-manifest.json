@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/messenger-test/static/css/main.280ef1b6.chunk.css",
+    "main.js": "/messenger-test/static/js/main.8bad8f36.chunk.js",
+    "main.js.map": "/messenger-test/static/js/main.8bad8f36.chunk.js.map",
+    "runtime-main.js": "/messenger-test/static/js/runtime-main.b97b882d.js",
+    "runtime-main.js.map": "/messenger-test/static/js/runtime-main.b97b882d.js.map",
+    "static/js/2.93d10f71.chunk.js": "/messenger-test/static/js/2.93d10f71.chunk.js",
+    "static/js/2.93d10f71.chunk.js.map": "/messenger-test/static/js/2.93d10f71.chunk.js.map",
+    "index.html": "/messenger-test/index.html",
+    "precache-manifest.d5a3b9b787947d8719aa9751a7f4b31b.js": "/messenger-test/precache-manifest.d5a3b9b787947d8719aa9751a7f4b31b.js",
+    "service-worker.js": "/messenger-test/service-worker.js",
+    "static/css/main.280ef1b6.chunk.css.map": "/messenger-test/static/css/main.280ef1b6.chunk.css.map",
+    "static/js/2.93d10f71.chunk.js.LICENSE.txt": "/messenger-test/static/js/2.93d10f71.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/messenger-test/static/media/IRANSansWeb_UltraLight.bb7ec39f.woff",
+    "static/media/main.module.scss": "/messenger-test/static/media/messenger-bg.9f39e76b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b97b882d.js",
+    "static/js/2.93d10f71.chunk.js",
+    "static/css/main.280ef1b6.chunk.css",
+    "static/js/main.8bad8f36.chunk.js"
+  ]
+}
