@@ -4,7 +4,7 @@ import { fromNow } from "../libs/date";
 import { shallowEqual } from "../libs/shallowEqual";
 import { direction } from "../themes";
 import { AvatarSizeType } from "./avatar";
-import UserComponent from "./user";
+import UserComponent from "./modules/user";
 
 type Props = {
   contacts: ContactsType;

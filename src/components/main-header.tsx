@@ -8,7 +8,7 @@ import { shallowEqual } from "../libs/shallowEqual";
 import { AsideStatusType } from "../store/theme/types";
 import { AvatarSizeType } from "./avatar";
 import styles from "./main-header.module.scss";
-import UserComponent, { UserProps } from "./user";
+import UserComponent, { UserProps } from "./modules/user";
 
 type Props = {
   toggleAside: () => void;

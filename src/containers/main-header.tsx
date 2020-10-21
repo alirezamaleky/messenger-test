@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import MainHeaderComponent from "../components/main-header";
-import { UserProps } from "../components/user";
+import { UserProps } from "../components/modules/user";
 import { shallowEqual } from "../libs/shallowEqual";
 import { ReducersType } from "../store";
 import { toggleAsideStatus } from "../store/theme/actions";
