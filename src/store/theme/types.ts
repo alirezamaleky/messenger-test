@@ -1,5 +1,8 @@
+import { UserProps } from "../../components/modules/user";
+
 export const TOGGLE_THEME = "TOGGLE_THEME";
 export const TOGGLE_ASIDE_STATUS = "TOGGLE_ASIDE_STATUS";
+export const SET_POPUP_USER = "SET_POPUP_USER";
 
 export enum ThemeType {
   DARK = "DARK",
@@ -8,9 +11,12 @@ export enum ThemeType {
 
 export type AsideStatusType = boolean;
 
+export type PopupUserType = UserProps | undefined;
+
 export type ThemeStateType = {
   theme: ThemeType;
   asideStatus: AsideStatusType;
+  popupUser: PopupUserType;
 };
 
 export type ToggleThemeActionType = {
@@ -22,4 +28,9 @@ export type ToggleAsideStatusActionType = {
   payload?: AsideStatusType;
 };
 
-export type ThemeActionTypes = ToggleThemeActionType | ToggleAsideStatusActionType;
+export type SetPopupUserActionType = {
+  type: typeof SET_POPUP_USER;
+  payload?: PopupUserType;
+};
+
+export type ThemeActionTypes = ToggleThemeActionType | ToggleAsideStatusActionType | SetPopupUserActionType;
