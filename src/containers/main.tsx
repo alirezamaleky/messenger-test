@@ -31,6 +31,18 @@ const Main: FC = () => {
         isMine: true,
       },
     ]);
+    setTimeout(() => {
+      setMessages((state: any) => [
+        ...state,
+        {
+          id: Date.now(),
+          time: Math.floor(Date.now() / 1000),
+          name: "Customer",
+          text: `reply to: ${content}`,
+          isMine: false,
+        },
+      ]);
+    }, 2000);
   };
 
   useEffect(() => {
