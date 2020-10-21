@@ -22,7 +22,7 @@ const UserComponent: FC<UserProps> = (props) => {
           <h3 className="my-0 text-capitalize">{props.name}</h3>
           {props.time !== undefined && <time className="font-weight-light small d-none d-sm-block">{props.time}</time>}
         </div>
-        {props.message !== undefined && <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>}
+        {props.message !== undefined && <p className="my-0 font-weight-light text-ellipsis text-capitalize">{props.message}</p>}
       </div>
     </Button>
   );
