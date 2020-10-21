@@ -6,7 +6,7 @@
 }
 
 .message {
-  background-color: #ffffff;
+  background-color: var(--message-bg);
   border-radius: var(--radius) var(--radius) var(--radius) 0;
   margin-right: 10px;
   margin-left: 10px;
@@ -14,7 +14,7 @@
 
   &.mine {
     border-radius: var(--radius) var(--radius) 0 var(--radius);
-    background-color: #cdcdcd;
+    background-color: var(--message-mine-bg);
   }
 }
 
