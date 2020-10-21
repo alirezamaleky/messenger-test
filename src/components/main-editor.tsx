@@ -1,6 +1,7 @@
 import { IconButton } from "@material-ui/core";
 import EmojiEmotionsOutlinedIcon from "@material-ui/icons/EmojiEmotionsOutlined";
 import React, { FC, memo } from "react";
+import MainMessages from "../containers/main-messages";
 import { shallowEqual } from "../libs/shallowEqual";
 import styles from "./main-editor.module.scss";
 import MainTextareaComponent from "./main-textarea";
@@ -16,6 +17,7 @@ const MainEditorComponent: FC<Props> = (props) => {
       <IconButton color="primary">
         <EmojiEmotionsOutlinedIcon />
       </IconButton>
+      <MainMessages />
       <MainTextareaComponent sendMessage={props.sendMessage} />
     </div>
   );
