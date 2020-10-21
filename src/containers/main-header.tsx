@@ -22,13 +22,13 @@ const MainHeader: FC = () => {
   };
 
   return (
-      <MainHeaderComponent
-          openUserPopup={openUserPopup}
-          toggleAside={() => dispatch(toggleAsideStatus())}
-          asideStatus={asideStatus}
-          isInChat={id !== undefined}
-          user={{ initials, avatar, color, name, message }}
-      />
+    <MainHeaderComponent
+      openUserPopup={openUserPopup}
+      toggleAside={() => dispatch(toggleAsideStatus())}
+      asideStatus={asideStatus}
+      isInChat={id !== undefined}
+      user={{ initials, avatar, color, name, message }}
+    />
   );
 };
 
