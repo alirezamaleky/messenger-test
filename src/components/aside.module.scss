@@ -1,0 +1,48 @@
+@import "src/assets/scss/variable";
+
+.aside {
+  flex: 0 0 350px;
+  max-width: 350px;
+}
+
+@media (max-width: #{map-get($grid-breakpoints, "md") - 1}) {
+  .aside {
+    flex: 0 0 250px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: #{map-get($grid-breakpoints, "sm") - 1}) {
+  .aside {
+    max-width: 70vw;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    z-index: 11;
+    bottom: 0;
+    left: -100%;
+    top: 0;
+    background-color: var(--aside-bg);
+    transition: all 0.5s;
+
+    [dir="rtl"] & {
+      left: initial;
+      right: -100%;
+    }
+
+    &.active,
+    &.full_width {
+      left: 0;
+
+      [dir="rtl"] & {
+        left: initial;
+        right: 0;
+      }
+    }
+
+    &.full_width {
+      max-width: 100vw;
+      width: 100%;
+    }
+  }
+}

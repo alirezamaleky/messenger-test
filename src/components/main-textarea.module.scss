@@ -1,0 +1,13 @@
+.textarea {
+  min-height: 41px;
+  max-height: 30vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: var(--editor-color);
+  padding: 7px 5px;
+  cursor: text;
+}
+
+[class*="public-DraftEditorPlaceholder-root"] {
+  position: absolute;
+}
