@@ -23,6 +23,13 @@
   }
 }
 
+@media (max-width: #{map-get($grid-breakpoints, "md") - 1}) {
+  .main {
+    flex: 0 0 calc(100% - 250px);
+    max-width: calc(100% - 250px);
+  }
+}
+
 @media (max-width: #{map-get($grid-breakpoints, "sm") - 1}) {
   .main {
     width: 100%;
