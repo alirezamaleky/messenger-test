@@ -27,7 +27,7 @@ const AvatarComponent: FC<AvatarProps> = (props) => {
       }}
     >
       {props.unreadCount !== undefined && props.unreadCount > 0 && <span className={`small ${styles.avatar_badge}`}>{props.unreadCount}</span>}
-      <span>{props.avatar === undefined && props.initials}</span>
+      <span className="text-uppercase">{props.avatar === undefined && props.initials}</span>
     </div>
   );
 };
