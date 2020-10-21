@@ -7,7 +7,7 @@ import { toggleAsideStatus } from "../store/theme/actions";
 
 export type ContactsType = Array<{
   id: string;
-  createdAt: string;
+  time: number;
   name: string;
   avatar: string;
   message: string;
