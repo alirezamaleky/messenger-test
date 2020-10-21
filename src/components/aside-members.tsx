@@ -19,7 +19,8 @@ const AsideMembersComponent: FC<Props> = (props) => {
       {props.members.map((member) => (
         <UserComponent
           onClick={() => {
-            memoryHistory.push(ROUTE_MESSENGER_CHAT.replace(":id?", "i"), {
+            memoryHistory.push(ROUTE_MESSENGER_CHAT.replace(":id?", member.id), {
+              id: member.id,
               initials: member.name.charAt(0),
               avatar: member.avatar,
               color: member.color,

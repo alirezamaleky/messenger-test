@@ -8,7 +8,7 @@ import UserComponent from "./modules/user";
 
 type Props = {
   contacts: ContactsType;
-  closeAside: () => void;
+  openUserPopup: (id: string) => void;
 };
 
 const AsideContactsComponent: FC<Props> = (props) => {
@@ -16,7 +16,7 @@ const AsideContactsComponent: FC<Props> = (props) => {
     <div dir={direction}>
       {props.contacts.map((contact) => (
         <UserComponent
-          onClick={props.closeAside}
+          onClick={() => props.openUserPopup(contact.id)}
           size={AvatarSizeType.MEDIUM}
           key={contact.id}
           initials={contact.name.charAt(0)}

@@ -5,6 +5,7 @@ import AvatarComponent, { AvatarProps } from "../avatar";
 import styles from "./user.module.scss";
 
 export type UserProps = AvatarProps & {
+  id?: string;
   name: string;
   time?: string;
   message?: string;
