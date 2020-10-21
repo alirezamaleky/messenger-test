@@ -16,7 +16,7 @@ const MainComponent: FC<Props> = (props) => {
   return (
     <main className={`shadow h-100 d-flex flex-column justify-content-between ${styles.main}`}>
       <MainHeader />
-      <MainMessagesComponent messages={props.messages} />
+      {props.isInChat && <MainMessagesComponent messages={props.messages} />}
       <MainEditorComponent sendMessage={props.sendMessage} isInChat={props.isInChat} />
     </main>
   );
