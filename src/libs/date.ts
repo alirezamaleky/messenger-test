@@ -21,6 +21,5 @@ export const fromNow: (timestamp: number) => string = (timestamp: number) => {
   const minutesDifference = Math.floor(difference / 60);
   if (minutesDifference > 0) return `${minutesDifference} ${"دقیقه"} ${"پیش"}`;
 
-  const secondsDifference = Math.floor(difference);
-  return `${secondsDifference} ${"ثانیه"} ${"پیش"}`;
+  return `${"چند لحظه پیش"}`;
 };
