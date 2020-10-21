@@ -1,40 +1,42 @@
-import { colors } from "@material-ui/core";
 import React, { FC, memo } from "react";
 import { ROUTE_MESSENGER_CHAT } from "../constants/routes";
+import { MembersType } from "../containers/aside-members";
 import { memoryHistory } from "../index";
+import { fromNow } from "../libs/date";
 import { shallowEqual } from "../libs/shallowEqual";
 import { direction } from "../themes";
 import { AvatarSizeType } from "./avatar";
 import UserComponent from "./user";
 
 type Props = {
+  members: MembersType;
   closeAside: () => void;
 };
 
 const AsideMembersComponent: FC<Props> = (props) => {
   return (
     <div dir={direction}>
-      {Array.from(Array(50), (e, i) => (
+      {props.members.map((member) => (
         <UserComponent
           onClick={() => {
             memoryHistory.push(ROUTE_MESSENGER_CHAT.replace(":id?", "i"), {
-              initials: i,
-              avatar: undefined,
-              color: colors.indigo["300"],
-              name: "علیرضا ملکی",
-              message: "12:58",
+              initials: member.name.charAt(0),
+              avatar: member.avatar,
+              color: member.color,
+              name: member.name,
+              message: fromNow(member.time),
             });
             props.closeAside();
           }}
-          key={i}
-          initials={"A"}
-          unreadCount={2}
-          avatar={undefined}
-          color={colors.indigo["300"]}
+          key={member.id}
+          initials={member.name.charAt(0)}
+          unreadCount={member.unreadCount}
+          avatar={member.avatar}
+          color={member.color}
+          name={member.name}
+          time={fromNow(member.time)}
+          message={member.message}
           size={AvatarSizeType.MEDIUM}
-          name={"علیرضا ملکی"}
-          time={"12:58"}
-          message={"لورم ایپسوم متنی ساختگی از صنعت چاپ و گرافیک است."}
         />
       ))}
     </div>

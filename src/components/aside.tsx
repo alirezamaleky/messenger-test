@@ -5,10 +5,10 @@ import React, { FC, memo, useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import AsideContacts from "../containers/aside-contacts";
 import AsideHeader from "../containers/aside-header";
+import AsideMembers from "../containers/aside-members";
 import { shallowEqual } from "../libs/shallowEqual";
 import { AsideStatusType } from "../store/theme/types";
 import { direction } from "../themes";
-import AsideMembersComponent from "./aside-members";
 import styles from "./aside.module.scss";
 
 enum AsideTabs {
@@ -29,7 +29,7 @@ const AsideComponent: FC<Props> = (props) => {
     <aside className={`shadow h-100 d-flex flex-column justify-content-start ${styles.aside} ${props.asideStatus ? styles.active : props.isInChat ? "" : styles.full_width}`}>
       <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
-        <AsideMembersComponent closeAside={props.closeAside} />
+        <AsideMembers />
         <AsideContacts />
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
