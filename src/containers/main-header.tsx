@@ -5,7 +5,7 @@ import MainHeaderComponent from "../components/main-header";
 import { UserProps } from "../components/modules/user";
 import { shallowEqual } from "../libs/shallowEqual";
 import { ReducersType } from "../store";
-import { toggleAsideStatus } from "../store/theme/actions";
+import { setPopupUser, toggleAsideStatus } from "../store/theme/actions";
 import { AsideStatusType } from "../store/theme/types";
 import { ChatParamsType } from "./main";
 
@@ -17,7 +17,19 @@ const MainHeader: FC = () => {
   const { state } = useLocation();
   const { initials, avatar, color, name, message } = (state as UserProps) || {};
 
-  return <MainHeaderComponent toggleAside={() => dispatch(toggleAsideStatus())} asideStatus={asideStatus} isInChat={id !== undefined} user={{ initials, avatar, color, name, message }} />;
+  const openUserPopup = () => {
+    dispatch(setPopupUser({ initials, avatar, color, name, message }));
+  };
+
+  return (
+    <MainHeaderComponent
+      openUserPopup={openUserPopup}
+      toggleAside={() => dispatch(toggleAsideStatus())}
+      asideStatus={asideStatus}
+      isInChat={id !== undefined}
+      user={{ initials, avatar, color, name, message }}
+    />
+  );
 };
 
 export default MainHeader;

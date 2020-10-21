@@ -11,6 +11,7 @@ import styles from "./main-header.module.scss";
 import UserComponent, { UserProps } from "./modules/user";
 
 type Props = {
+  openUserPopup: () => void;
   toggleAside: () => void;
   asideStatus: AsideStatusType;
   isInChat: boolean;
@@ -27,6 +28,7 @@ const MainHeaderComponent: FC<Props> = (props) => {
               <CloseOutlinedIcon />
             </IconButton>
             <UserComponent
+              onClick={props.openUserPopup}
               size={AvatarSizeType.SMALL}
               initials={props.user?.initials || ""}
               avatar={props.user?.avatar}
