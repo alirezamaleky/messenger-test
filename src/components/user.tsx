@@ -19,7 +19,7 @@ const UserComponent: FC<UserProps> = (props) => {
       </div>
       <div className={`col text-start ${styles.contents}`}>
         <div className="d-flex justify-content-between">
-          <h3 className="my-0">{props.name}</h3>
+          <h3 className="my-0 text-capitalize">{props.name}</h3>
           {props.time !== undefined && <time className="font-weight-light small d-none d-sm-block">{props.time}</time>}
         </div>
         {props.message !== undefined && <p className="my-0 font-weight-light text-ellipsis">{props.message}</p>}

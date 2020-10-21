@@ -3,11 +3,11 @@ import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineO
 import PermContactCalendarOutlinedIcon from "@material-ui/icons/PermContactCalendarOutlined";
 import React, { FC, memo, useState } from "react";
 import SwipeableViews from "react-swipeable-views";
+import AsideContacts from "../containers/aside-contacts";
 import AsideHeader from "../containers/aside-header";
 import { shallowEqual } from "../libs/shallowEqual";
 import { AsideStatusType } from "../store/theme/types";
 import { direction } from "../themes";
-import AsideContactsComponent from "./aside-contacts";
 import AsideMembersComponent from "./aside-members";
 import styles from "./aside.module.scss";
 
@@ -30,7 +30,7 @@ const AsideComponent: FC<Props> = (props) => {
       <AsideHeader />
       <SwipeableViews className="col p-0" axis={direction === "rtl" ? "x" : "x-reverse"} index={index} onChangeIndex={setIndex}>
         <AsideMembersComponent closeAside={props.closeAside} />
-        <AsideContactsComponent closeAside={props.closeAside} />
+        <AsideContacts />
       </SwipeableViews>
       <AppBar position="static" className="shadow-lg">
         <Tabs color="primary" indicatorColor="secondary" value={index} onChange={(e, v) => setIndex(v)}>
